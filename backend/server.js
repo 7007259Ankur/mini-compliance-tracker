@@ -3,7 +3,9 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: ["https://flourishing-moxie-1f9537.netlify.app", "http://localhost:5173"],
+}));
 app.use(express.json());
 
 app.use("/api/clients", require("./routes/clients"));
